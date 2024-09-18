@@ -1,0 +1,38 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+/* .preparation{
+    margin: 50px;
+}
+.choose_prep {
+    margin: 40px;
+    padding: 20px;
+    background-color: rgb(253, 253, 253);
+    border: solid 1px;
+    padding-left: 120px;
+
+}
+.remove-btn {
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.adjust-quantity {
+    display: inline-block;
+    margin-left: 10px;
+} */
+
+
+.text_number{
+    width: 80px !important;
+    font-size: 1.2rem;
+
+}
+.list-text{
+    width: 200px;
+    font-size: 1rem !important;
+
+}
