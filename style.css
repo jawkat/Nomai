@@ -38,7 +38,7 @@ body {
   /* Hover effect for the navbar */
   .navbar:hover {
     background-color: #212529 !important; /* Darker on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    box-shadow: 0 4px 8px rgba(253, 0, 0, 0.986); /* Subtle shadow */
   }
 
   /* Style for nav links */
@@ -48,6 +48,7 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     transition: color 0.3s ease-in-out;
+    background-color: aqua;
   }
 
   /* Hover effect for nav links */
