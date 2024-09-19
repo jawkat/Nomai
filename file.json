@@ -1,0 +1,160 @@
+[
+    {
+        "name": "Supreme de Poulet alla Parmiggiana",
+        "ingredients": [
+          { "name": "Poulet", "amount": 0.160, "unit": "kg", "pricePerKg": 70.00, "rendement": 0.5, "totalPrice": 11.20 },
+          { "name": "Aubergine", "amount": 0.250, "unit": "kg", "pricePerKg": 6.00, "totalPrice": 1.50 },
+          { "name": "Sauce Tomate MUTTI", "amount": 0.100, "unit": "kg", "pricePerKg": 36.00, "totalPrice": 3.60 },
+          { "name": "Parmesan", "amount": 0.040, "unit": "kg", "pricePerKg": 180.00, "totalPrice": 7.20 },
+          { "name": "Mozzarella", "amount": 0.080, "unit": "kg", "pricePerKg": 57.00, "totalPrice": 4.56 },
+          { "name": "Basilic", "amount": 0.100, "unit": "botte", "pricePerBotte": 15.00, "totalPrice": 1.50 },
+          { "name": "Sel", "amount": 0.005, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.05 },
+          { "name": "Poivre blanc", "amount": 0.005, "unit": "kg", "pricePerKg": 110.00, "totalPrice": 0.55 },
+          { "name": "02 Garnitures (leg *100g)", "amount": 2.000, "unit": "portion", "pricePerPortion": 3.51, "totalPrice": 7.02 },
+          { "name": "Basilic", "amount": 0.100, "unit": "botte", "pricePerBotte": 15.00, "totalPrice": 1.50 },
+          { "name": "Huile d'olive", "amount": 0.0125, "unit": "L", "pricePerL": 77.00, "totalPrice": 0.96 },
+          { "name": "Ail", "amount": 0.0005, "unit": "kg", "pricePerKg": 30.00, "totalPrice": 0.02 },
+          { "name": "Parmesan", "amount": 0.0035, "unit": "kg", "pricePerKg": 180.00, "totalPrice": 0.63 },
+          { "name": "Noix 500g", "amount": 0.00125, "unit": "g", "pricePerG": 85.80, "totalPrice": 0.11 },
+          { "name": "Sel", "amount": 0.00025, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.00 },
+          { "name": "Poivre blanc", "amount": 0.00025, "unit": "kg", "pricePerKg": 110.00, "totalPrice": 0.03 }
+        ]
+      }
+      ,
+      {
+        "name": "Coquelet Fermier",
+        "ingredients": [
+          { "name": "Coquelet", "amount": 1.000, "unit": "piece", "pricePerPiece": 24.00, "totalPrice": 24.00 },
+          { "name": "Romarin", "amount": 0.125, "unit": "bte", "pricePerBte": 15.00, "totalPrice": 1.88 },
+          { "name": "Citron", "amount": 0.015, "unit": "kg", "pricePerKg": 20.00, "totalPrice": 0.30 },
+          { "name": "Beurre", "amount": 0.025, "unit": "kg", "pricePerKg": 100.00, "totalPrice": 2.50 },
+          { "name": "02 Garnitures (leg *100g)", "amount": 2.000, "unit": "portion", "pricePerPortion": 3.51, "totalPrice": 7.02 },
+          { "name": "Oignon Poudre", "amount": 0.002, "unit": "kg", "pricePerKg": 165.00, "totalPrice": 0.33 },
+          { "name": "Ail Poudre", "amount": 0.002, "unit": "kg", "pricePerKg": 80.00, "totalPrice": 0.16 },
+          { "name": "Hrissa", "amount": 0.010, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.10 },
+          { "name": "Poivre Blanc", "amount": 0.002, "unit": "kg", "pricePerKg": 110.00, "totalPrice": 0.22 },
+          { "name": "Beurre", "amount": 0.005, "unit": "kg", "pricePerKg": 100.00, "totalPrice": 0.50 },
+          { "name": "Ail", "amount": 0.005, "unit": "kg", "pricePerKg": 30.00, "totalPrice": 0.15 },
+          { "name": "Oignon", "amount": 0.010, "unit": "kg", "pricePerKg": 7.00, "totalPrice": 0.07 },
+          { "name": "Jus de Citron", "amount": 0.005, "unit": "kg", "pricePerKg": 20.00, "totalPrice": 0.10 },
+          { "name": "Origan", "amount": 0.001, "unit": "kg", "pricePerKg": 120.00, "totalPrice": 0.12 },
+          { "name": "Herbe de Provence", "amount": 0.001, "unit": "kg", "pricePerKg": 120.00, "totalPrice": 0.12 },
+          { "name": "Moutarde à l'Ancienne 21cl", "amount": 5.000, "unit": "g", "pricePerG": 0.57, "totalPrice": 2.86 },
+          { "name": "Sauce Worcestershire 150ml", "amount": 5.000, "unit": "g", "pricePerG": 0.17, "totalPrice": 0.83 },
+          { "name": "Sel", "amount": 0.005, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.05 },
+          { "name": "Piment Fort", "amount": 0.001, "unit": "kg", "pricePerKg": 60.00, "totalPrice": 0.06 },
+          { "name": "Paprika", "amount": 0.002, "unit": "kg", "pricePerKg": 67.20, "totalPrice": 0.13 },
+          { "name": "Persil", "amount": 0.002, "unit": "kg", "pricePerKg": 2.00, "totalPrice": 0.00 },
+          { "name": "Zeste de Citron", "amount": 0.001, "unit": "kg", "pricePerKg": 20.00, "totalPrice": 0.02 }
+        ]
+      },
+
+      {
+        "name": "Chateaubriand et son Jus",
+        "ingredients": [
+          { "name": "Cœur de Filet de Bœuf", "amount": 0.200, "unit": "kg", "pricePerKg": 125.00, "totalPrice": 25.00 },
+          { "name": "Sel", "amount": 0.002, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.02 },
+          { "name": "Poivre Blanc", "amount": 0.002, "unit": "kg", "pricePerKg": 110.00, "totalPrice": 0.22 },
+          { "name": "Romarin", "amount": 0.050, "unit": "botte", "pricePerBotte": 15.00, "totalPrice": 0.75 },
+          { "name": "Échalote", "amount": 0.060, "unit": "kg", "pricePerKg": 26.00, "totalPrice": 1.56 },
+          { "name": "Thym", "amount": 0.050, "unit": "botte", "pricePerBotte": 15.00, "totalPrice": 0.75 },
+          { "name": "Pomme de Terre", "amount": 0.150, "unit": "kg", "pricePerKg": 8.00, "totalPrice": 1.20 },
+          { "name": "Oignon", "amount": 0.600, "unit": "kg", "pricePerKg": 7.00, "totalPrice": 4.20 },
+          { "name": "02 Garnitures (leg *100g)", "amount": 1.000, "unit": "portion", "pricePerPortion": 3.51, "totalPrice": 3.51 },
+          { "name": "Fond de Bœuf", "amount": 0.125, "unit": "L", "pricePerL": 0.000000001, "totalPrice": 0.00 },
+          { "name": "Crème Fraîche Gastro", "amount": 0.008, "unit": "kg", "pricePerKg": 27.00, "totalPrice": 0.20 },
+          { "name": "Demi Glace 500g", "amount": 0.038, "unit": "kg", "pricePerKg": 130.00, "totalPrice": 4.88 }
+        ]
+      },
+
+
+      {
+        "name": "Filet de Bœuf à la Sauce au Champignons",
+        "ingredients": [
+          { "name": "Filet de Bœuf -30%", "amount": 0.200, "unit": "kg", "pricePerKg": 180.00, "totalPrice": 36.00 },
+          { "name": "Huile d'Olive", "amount": 0.010, "unit": "L", "pricePerL": 77.00, "totalPrice": 0.77 },
+          { "name": "Sel", "amount": 0.003, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.03 },
+          { "name": "Poivre Blanc", "amount": 0.003, "unit": "kg", "pricePerKg": 110.00, "totalPrice": 0.33 },
+          { "name": "02 Garnitures (leg *100g)", "amount": 2.000, "unit": "portion", "pricePerPortion": 3.51, "totalPrice": 7.02 },
+          { "name": "Os", "amount": 0.500, "unit": "kg", "pricePerKg": 0.000000000001, "totalPrice": 0.00 },
+          { "name": "Carottes", "amount": 0.050, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.50 },
+          { "name": "Poireau", "amount": 0.030, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.30 },
+          { "name": "Oignon", "amount": 0.050, "unit": "kg", "pricePerKg": 7.00, "totalPrice": 0.35 },
+          { "name": "Ail", "amount": 0.005, "unit": "kg", "pricePerKg": 30.00, "totalPrice": 0.15 },
+          { "name": "Vinaigre Balsamique", "amount": 0.006, "unit": "L", "pricePerL": 95.60, "totalPrice": 0.57 },
+          { "name": "Poivre Noir en Grain", "amount": 0.0005, "unit": "kg", "pricePerKg": 78.00, "totalPrice": 0.04 },
+          { "name": "Champignon de Paris", "amount": 0.030, "unit": "kg", "pricePerKg": 40.00, "totalPrice": 1.20 },
+          { "name": "Crème de Cuisson", "amount": 0.020, "unit": "L", "pricePerL": 27.00, "totalPrice": 0.54 },
+          { "name": "Oignon", "amount": 0.010, "unit": "kg", "pricePerKg": 7.00, "totalPrice": 0.07 },
+          { "name": "Ail", "amount": 0.005, "unit": "kg", "pricePerKg": 30.00, "totalPrice": 0.15 },
+          { "name": "Persil", "amount": 0.005, "unit": "botte", "pricePerBotte": 1.50, "totalPrice": 0.01 }
+        ]
+      },
+    {
+
+        "name": "Filet de Bœuf à la Sauce aux 5 Poivres",
+        "ingredients": [
+            { "name": "Filet de Bœuf -30%", "amount": 0.200, "unit": "kg", "pricePerKg": 180.00, "totalPrice": 36.00 },
+            { "name": "Huile d'Olive", "amount": 0.010, "unit": "L", "pricePerL": 77.00, "totalPrice": 0.77 },
+            { "name": "Sel", "amount": 0.003, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.03 },
+            { "name": "Poivre Blanc", "amount": 0.003, "unit": "kg", "pricePerKg": 110.00, "totalPrice": 0.33 },
+            { "name": "Sauce aux 5 Poivres", "amount": 1.000, "unit": "portion", "pricePerPortion": 6.99, "totalPrice": 6.99 },
+            { "name": "02 Garnitures (leg *100g)", "amount": 2.000, "unit": "portion", "pricePerPortion": 3.51, "totalPrice": 7.02 },
+            { "name": "Os", "amount": 0.500, "unit": "kg", "pricePerKg": 0.00000001, "totalPrice": 0.00 },
+            { "name": "Carottes", "amount": 0.050, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.50 },
+            { "name": "Poireau", "amount": 0.030, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.30 },
+            { "name": "Oignon", "amount": 0.050, "unit": "kg", "pricePerKg": 7.00, "totalPrice": 0.35 },
+            { "name": "Ail", "amount": 0.005, "unit": "kg", "pricePerKg": 30.00, "totalPrice": 0.15 },
+            { "name": "Vinaigre Balsamique", "amount": 0.006, "unit": "L", "pricePerL": 95.60, "totalPrice": 0.57 },
+            { "name": "Poivre Noir en Grain", "amount": 0.001, "unit": "kg", "pricePerKg": 78.00, "totalPrice": 0.04 },
+            { "name": "Poivre Blanc", "amount": 0.005, "unit": "kg", "pricePerKg": 110.00, "totalPrice": 0.55 },
+            { "name": "Poivre Noir", "amount": 0.020, "unit": "L", "pricePerL": 78.00, "totalPrice": 1.56 },
+            { "name": "Oignon", "amount": 0.020, "unit": "kg", "pricePerKg": 7.00, "totalPrice": 0.14 },
+            { "name": "Ail", "amount": 0.010, "unit": "kg", "pricePerKg": 30.00, "totalPrice": 0.30 },
+            { "name": "Poivre Vert 4/4", "amount": 0.005, "unit": "boite", "pricePerBte": 105.00, "totalPrice": 0.53 },
+            { "name": "Baies Roses", "amount": 0.005, "unit": "kg", "pricePerKg": 400.00, "totalPrice": 2.00 }
+        ]
+        },
+
+        {
+            "name": "Mesclun de Salade Vinaigrette Maison",
+            "ingredients": [
+              { "name": "Salade Iceberg", "amount": 0.333, "unit": "piece", "pricePerPiece": 4.50, "totalPrice": 1.50 },
+              { "name": "Salade Lolo Rouge", "amount": 0.333, "unit": "piece", "pricePerPiece": 4.50, "totalPrice": 1.50 },
+              { "name": "Roquette", "amount": 0.010, "unit": "botte", "pricePerBotte": 65.00, "totalPrice": 0.65 },
+              { "name": "Pousse de Betterave", "amount": 0.010, "unit": "barquette", "pricePerPiece": 17.00, "totalPrice": 0.17 },
+              { "name": "Vinaigrette Maison", "amount": 0.005, "unit": "kg", "pricePerKg": 3.23, "totalPrice": 0.02 }
+            ]
+          },
+          {
+            "name": "Pomme Frites",
+            "ingredients": [
+              { "name": "Pomme de terre (Agadir)", "amount": 0.150, "unit": "kg", "pricePerKg": 8.00, "totalPrice": 1.20 },
+              { "name": "Huile de friture", "amount": 0.080, "unit": "L", "pricePerL": 26.29, "totalPrice": 2.10 }
+            ]
+          },
+          {
+            "name": "Cassolette de Légumes à l'Ail et au Persil",
+            "ingredients": [
+              { "name": "Carotte", "amount": 0.060, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.60 },
+              { "name": "Courgette", "amount": 0.060, "unit": "kg", "pricePerKg": 12.00, "totalPrice": 0.72 },
+              { "name": "Haricot vert", "amount": 0.060, "unit": "kg", "pricePerKg": 17.00, "totalPrice": 1.02 },
+              { "name": "Fenouille", "amount": 0.050, "unit": "kg", "pricePerKg": 9.00, "totalPrice": 0.45 },
+              { "name": "Ail", "amount": 0.005, "unit": "kg", "pricePerKg": 30.00, "totalPrice": 0.15 },
+              { "name": "Persil", "amount": 0.005, "unit": "botte", "pricePerBotte": 1.50, "totalPrice": 0.01 },
+              { "name": "Sel", "amount": 0.005, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.05 },
+              { "name": "Poivre blanc", "amount": 0.005, "unit": "kg", "pricePerKg": 110.00, "totalPrice": 0.55 },
+              { "name": "Huile d'olive", "amount": 0.010, "unit": "L", "pricePerL": 84.00, "totalPrice": 0.84 }
+            ]
+          },
+          {
+            "name": "Riz Basmati",
+            "ingredients": [
+              { "name": "Riz Basmati", "amount": 0.0333, "unit": "kg", "pricePerKg": 48.00, "totalPrice": 1.60 },
+              { "name": "Beurre", "amount": 0.0033, "unit": "kg", "pricePerKg": 100.00, "totalPrice": 0.33 },
+              { "name": "Sel", "amount": 0.0007, "unit": "kg", "pricePerKg": 10.00, "totalPrice": 0.01 },
+              { "name": "Poivre blanc", "amount": 0.0007, "unit": "kg", "pricePerKg": 110.00, "totalPrice": 0.07 },
+              { "name": "Ciboulette", "amount": 0.0333, "unit": "botte", "pricePerBotte": 15.00, "totalPrice": 0.50 }
+            ]
+          }
+  ]

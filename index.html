@@ -26,6 +26,9 @@
       crossorigin="anonymous"
     ></script>
 
+    <script dfer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+
     <title>Preparation Ingredients Calculator</title>
   </head>
   <body>
@@ -57,6 +60,12 @@
         </div>
       </div>
     </nav>
+
+
+    <div id="notification-container" class="position-fixed top-0 end-0 p-3" style=" z-index: 11;">
+      <!-- Notifications will be added here by JavaScript -->
+    </div>
+
 
 
 
@@ -95,18 +104,23 @@
                 required
               />
             </div>
-            <button
+            <div class="d-flex flex-column gap-2">
+              <button
               class="btn btn-info text-white"
               type="button"
               onclick="addSelectedPreparation() + calculateTotal()"
             >
               Add Preparation
             </button>
+            <button class="btn btn-primary" onclick="generateExcelReport()">Download Excel</button>
+
+
+            </div>
+
           </form>
         </div>
       </div>
-      <div class="d-md-flex justify-content-center gap-5">
-
+      <div class="d-md-flex justify-content-center min-vw-75 gap-2">
 
         <div class="mb-4 flex-grow-1">
           <h3>Les préparations Choisis</h3>
@@ -126,14 +140,15 @@
 
 
         <div class=" flex-grow-1">
-          <h3>Totale des Ingrédients:</h3>
+          <h3>Total des Ingrédients:</h3>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th>Ingredient</th>
-
-                <th>Quantité Total</th>
-                <th>Prix total</th>
+                <th>Ingrédient</th>
+                <th>Rendement</th>
+                <th>Quantité Net</th>
+                <th>Quantité Brute</th>
+                <th>Prix Total</th>
               </tr>
             </thead>
             <tbody id="total-ingredients"> <!-- Rows will be dynamically added here -->
@@ -151,6 +166,10 @@
 
 
   <!-- Form to calculate total ingredients -->
+
+
+
+
 
 
 

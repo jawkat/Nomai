@@ -1,0 +1,3 @@
+git remote -v
+git remote set-url origin https://github.com/jawkat/nomai.git
+git pull origin master

@@ -1,93 +1,16 @@
 
 // Define built-in preparations with ingredients
 
-const builtInPreparations = [
-    {
-    name: "Supreme de Poulet alla Parmiggiana",
-    ingredients: [
-      { name: "Poulet", amount: 0.160, unit: "kg", pricePerKg: 70.00 },
-      { name: "Aubergine", amount: 0.250, unit: "kg", pricePerKg: 6.00 },
-      { name: "Sauce Tomate MUTTI", amount: 0.100, unit: "kg", pricePerKg: 36.00 },
-      { name: "Parmesan", amount: 0.040, unit: "kg", pricePerKg: 180.00 },
-      { name: "Mozzarella", amount: 0.080, unit: "kg", pricePerKg: 57.00 },
-      { name: "Basilic", amount: 0.100, unit: "bote", pricePerBote: 15.00 },
-      //{ name: "Sauce Pesto", amount: 1.000, unit: "portion", pricePerPortion: 3.24 },
-      { name: "Sel", amount: 0.005, unit: "kg", pricePerKg: 10.00 },
-      { name: "Poivre Blanc", amount: 0.005, unit: "kg", pricePerKg: 110.00 },
-      { name: "02 Garnitures (leg *100g)", amount: 2.000, unit: "portion", pricePerPortion: 3.51 },
-      { name: "Basilic", amount: 0.1000, unit: "bote", pricePerBote: 15.00 },
-      { name: "Huile d'Olive", amount: 0.0125, unit: "L", pricePerL: 77.00 },
-      { name: "Ail", amount: 0.0005, unit: "kg", pricePerKg: 30.00 },
-      { name: "Parmesan", amount: 0.0035, unit: "kg", pricePerKg: 180.00 },
-      { name: "Noix 500g", amount: 0.0013, unit: "g", pricePerG: 85.80 },
-      { name: "Sel", amount: 0.0003, unit: "kg", pricePerKg: 10.00 },
-      { name: "Poivre Blanc", amount: 0.0003, unit: "kg", pricePerKg: 110.00 },
-    ],
-    },
-    {
-    name: "Coquelet Fermier",
-    ingredients: [
-      { name: "Coquelet", amount: 1.000, unit: "piece", pricePerPiece: 24.00 },
-      { name: "Romarin", amount: 0.125, unit: "bte", pricePerBte: 15.00 },
-      { name: "Citron", amount: 0.015, unit: "kg", pricePerKg: 20.00 },
-      { name: "Beurre", amount: 0.025, unit: "kg", pricePerKg: 100.00 },
-      //{ name: "Marinade", amount: 1.000, unit: "portion", pricePerPortion: 6.60 },
-      { name: "02 Garnitures (leg *100g)", amount: 2.000, unit: "portion", pricePerPortion: 3.51 },
-      { name: "Oignon Poudre", amount: 0.002, unit: "kg", pricePerKg: 165.00 },
-      { name: "Ail Poudre", amount: 0.002, unit: "kg", pricePerKg: 80.00 },
-      { name: "Beurre", amount: 0.005, unit: "kg", pricePerKg: 100.00 },
-      { name: "Ail", amount: 0.005, unit: "kg", pricePerKg: 30.00 },
-      { name: "Oignon", amount: 0.010, unit: "kg", pricePerKg: 7.00 },
-      { name: "Hrissa", amount: 0.010, unit: "kg", pricePerKg: 10.00 },
-      { name: "Jus de Citron", amount: 0.005, unit: "kg", pricePerKg: 20.00 },
-      { name: "Origan", amount: 0.001, unit: "kg", pricePerKg: 120.00 },
-      { name: "Herbe de Provence", amount: 0.001, unit: "kg", pricePerKg: 120.00 },
-      { name: "Moutarde à l'Ancienne 21cl", amount: 5.000, unit: "g", pricePerG: 0.57 },
-      { name: "Poivre Blanc", amount: 0.002, unit: "kg", pricePerKg: 110.00 },
-      { name: "Huile d'Olive", amount: 0.010, unit: "L", pricePerL: 77.00 },
-      { name: "Sauce Worcestershire 150ml", amount: 5.000, unit: "g", pricePerG: 0.17 },
-      { name: "Sel", amount: 0.005, unit: "kg", pricePerKg: 10.00 },
-      { name: "Piment Fort", amount: 0.001, unit: "kg", pricePerKg: 60.00 },
-      { name: "Paprika", amount: 0.002, unit: "kg", pricePerKg: 67.20 },
-      { name: "Persil", amount: 0.002, unit: "kg", pricePerKg: 2.00 },
-      { name: "Zeste de Citron", amount: 0.001, unit: "kg", pricePerKg: 20.00 },
-    ],
-    },
-    {
-    name: "Chateaubriand et son Jus",
-    ingredients: [
-      { name: "Cœur de Filet de Bœuf", amount: 0.200, unit: "kg", pricePerKg: 125.00 },
-      { name: "Sel", amount: 0.002, unit: "kg", pricePerKg: 10.00 },
-      { name: "Poivre Blanc", amount: 0.002, unit: "kg", pricePerKg: 110.00 },
-      { name: "Romarin", amount: 0.050, unit: "bte", pricePerBte: 15.00 },
-      { name: "Échalote", amount: 0.060, unit: "kg", pricePerKg: 26.00 },
-      //{ name: "Jus de Bœuf", amount: 1.000, unit: "portion", pricePerPortion: 5.08 },
-      { name: "Thym", amount: 0.050, unit: "bote", pricePerBote: 15.00 },
-      { name: "Pomme de Terre", amount: 0.150, unit: "kg", pricePerKg: 8.00 },
-      { name: "Oignon", amount: 0.600, unit: "kg", pricePerKg: 7.00 },
-      { name: "02 Garnitures (leg *100g)", amount: 1.000, unit: "portion", pricePerPortion: 3.51 },
-      { name: "Fond de Bœuf", amount: 0.125, unit: "L", pricePerL: 0.00 },
-      { name: "Crème Fraîche Gastro", amount: 0.008, unit: "kg", pricePerKg: 27.00 },
-      { name: "Demi Glace 500g", amount: 0.038, unit: "kg", pricePerKg: 130.00 },
-    ],
-    },
-    {
-    name: "Filet de Bœuf à la Sauce au Champignons",
-    ingredients: [
-      { name: "Filet de Bœuf -30%", amount: 0.200, unit: "kg", pricePerKg: 180.00 },
-      { name: "Huile d'Olive", amount: 0.010, unit: "L", pricePerL: 77.00 },
-      { name: "Sel", amount: 0.003, unit: "kg", pricePerKg: 10.00 },
-      { name: "Poivre Blanc", amount: 0.003, unit: "kg", pricePerKg: 110.00 },
-      //{ name: "Sauce de Champignon", amount: 1.000, unit: "portion", pricePerPortion: 3.88 },
-      { name: "02 Garnitures (leg *100g)", amount: 2.000, unit: "portion", pricePerPortion: 3.51 },
-      //{ name: "Jus de Bœuf", amount: 1.000, unit: "portion", pricePerPortion: 1.91 },
-      { name: "Champignons", amount: 0.070, unit: "kg", pricePerKg: 18.00 },
-      { name: "Crème Fraîche", amount: 0.010, unit: "kg", pricePerKg: 25.00 },
-      { name: "Échalote", amount: 0.015, unit: "kg", pricePerKg: 26.00 },
-      { name: "Beurre", amount: 0.015, unit: "kg", pricePerKg: 100.00 },
-    ],
-    },
-    ];
+let ingredientTotals = {}; // Declare globally
+  fetch('file.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log('Loaded data:', data);
+    builtInPreparations = data;
+    loadBuiltInPreparations();
+  })
+  .catch(error => console.error('Error loading JSON:', error));
+
 
     let selectedPreparations = [];
 
@@ -102,6 +25,34 @@ const builtInPreparations = [
       });
     }
 
+        // Check if a preparation is already in the selected list
+    function isPreparationInList(preparationName) {
+      return selectedPreparations.some(prep => prep.name === preparationName);
+    }
+
+function showNotification(message, type) {
+  // Create a new notification element
+  const notificationHTML = `
+        <div class="toast align-items-center text-white bg-${type} border-0 mb-2" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex ">
+            <div class="toast-body flash-message text-black">
+              ${message}
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+        </div>
+      `;
+   // Append the notification element to the notification container
+   const notificationContainer = document.getElementById("notification-container");
+   notificationContainer.innerHTML += notificationHTML;
+
+   // Initialize and show the toast
+   const toastElement = notificationContainer.lastElementChild;
+   const toast = new bootstrap.Toast(toastElement);
+   toast.show();
+ }
+
+
     // Add selected preparation and its quantity to the list
     function addSelectedPreparation() {
       const selectedIndex = document.getElementById("prep-select").value;
@@ -109,12 +60,20 @@ const builtInPreparations = [
       const prepQuantity = Number(document.getElementById("prep-quantity").value);
 
       if (selectedPrep && prepQuantity > 0) {
-        selectedPreparations.push({
-          ...selectedPrep,
-          quantity: prepQuantity,
-        });
+
+        if (isPreparationInList(selectedPrep.name)) {
+          showNotification('This preparation is already in the list!', 'warning');
+        } else {
+          // Add preparation to the list
+          selectedPreparations.push({
+            ...selectedPrep,
+            quantity: prepQuantity
+          });
 
         displayChosenPreparations();
+        }
+      } else {
+        showNotification('Please select a preparation and enter a valid quantity.', 'danger');
       }
     }
 
@@ -155,26 +114,7 @@ const builtInPreparations = [
       }
     }
 
-    // Calculate total ingredients needed based on selected preparations
-    function calculateTotal() {
-      const ingredientTotals = {};
 
-      selectedPreparations.forEach((prep) => {
-        prep.ingredients.forEach((ingredient) => {
-          const totalAmount = ingredient.amount * prep.quantity;
-          if (!ingredientTotals[ingredient.name]) {
-            ingredientTotals[ingredient.name] = {
-              totalAmount: 0,
-              unit: ingredient.unit,
-              price: ingredient.pricePerKg || ingredient.pricePerL || ingredient.pricePerPiece || ingredient.pricePerG || ingredient.pricePerPortion || ingredient.pricePerBte || ingredient.pricePerBote,
-            };
-          }
-          ingredientTotals[ingredient.name].totalAmount += totalAmount;
-        });
-      });
-
-      displayTotalIngredients(ingredientTotals);
-    }
 
 // Function to display the total ingredients in the predefined table
 function displayTotalIngredients(ingredientTotals) {
@@ -191,13 +131,16 @@ function displayTotalIngredients(ingredientTotals) {
   // Loop through the sorted ingredients and create rows for each
   sortedIngredients.forEach(([name, data]) => {
     const totalPrice = data.price * data.totalAmount; // Calculate total price
+    const brute = data.rendement ? (data.totalAmount / data.rendement).toFixed(2) : 'N/A'; // Calculate brute
 
     // Create a new table row
     const row = document.createElement("tr");
     row.innerHTML = `
       <td>${name}</td>
-      <td>${data.totalAmount.toFixed(2)} ${data.unit}</td>
-      <td>${totalPrice.toFixed(2)}</td>
+      <td>${(data.rendement * 100).toFixed(0)}%</td>
+      <td>${data.totalAmount.toFixed(4)} ${data.unit}</td>
+      <td>${brute} ${data.unit}</td> <!-- New column for brute -->
+      <td>${totalPrice.toFixed(2)}</td> <!-- New column for brute -->
     `;
 
     // Append the row to the tbody
@@ -205,6 +148,107 @@ function displayTotalIngredients(ingredientTotals) {
   });
 }
 
-
     // Load built-in preparations when the page loads
     loadBuiltInPreparations();
+
+
+    function generateExcelReport() {
+      // First, calculate the total ingredients to ensure data is up to date
+      calculateTotal(); // This will populate ingredientTotals
+
+      // Debugging: Check if ingredientTotals has data
+      console.log("Ingredient Totals after calculation:", ingredientTotals);
+
+      if (Object.keys(ingredientTotals).length === 0) {
+        console.error("No ingredients found for the selected preparations.");
+        return;
+      }
+
+      // Create a new workbook and add a worksheet
+      const wb = XLSX.utils.book_new();
+
+      // Prepare data for the first sheet (Selected Preparations)
+      const preparationsSheet = [
+        ["Preparation", "Quantity"]
+      ];
+
+      selectedPreparations.forEach(prep => {
+        preparationsSheet.push([prep.name, prep.quantity]);
+      });
+
+      // Add preparations sheet to the workbook
+      const preparationsWS = XLSX.utils.aoa_to_sheet(preparationsSheet);
+      XLSX.utils.book_append_sheet(wb, preparationsWS, "Selected Preparations");
+
+      // Prepare data for the second sheet (Total Ingredients)
+      const ingredientsSheet = [
+        ["Ingrédient", "Unité", "Rendement", "Qté Net", "Qté Brute"]
+      ];
+
+      // Convert the ingredientTotals object to an array and sort it by total price (descending order)
+      const sortedIngredients = Object.entries(ingredientTotals).sort((a, b) => {
+        const totalPriceA = a[1].price * a[1].totalAmount;
+        const totalPriceB = b[1].price * b[1].totalAmount;
+        return totalPriceB - totalPriceA; // Sort descending by price
+      });
+
+      // Prepare data for the sorted ingredients
+      sortedIngredients.forEach(([name, data]) => {
+        const totalPrice = data.price * data.totalAmount; // Calculate total price
+        const brute = data.rendement ? (data.totalAmount / data.rendement).toFixed(2) : 'N/A'; // Calculate brute
+
+        // Replace the decimal point (.) with a comma (,) manually
+        const formattedTotalAmount = data.totalAmount.toFixed(2).replace('.', ',');
+        const formattedBrute = brute !== 'N/A' ? brute.replace('.', ',') : 'N/A';
+
+        // Push the values as per your requirement, replacing decimal points with commas
+        ingredientsSheet.push([
+          name,                            // Ingredient Name
+          data.unit,                       // Unit (e.g., kg, L)
+          (data.rendement * 100).toFixed(0) + "%", // Rendement as percentage
+          formattedTotalAmount,            // Total Amount with comma decimal
+          formattedBrute                   // Brute value with comma decimal
+        ]);
+      });
+
+      // Add ingredients sheet to the workbook
+      const ingredientsWS = XLSX.utils.aoa_to_sheet(ingredientsSheet);
+      XLSX.utils.book_append_sheet(wb, ingredientsWS, "Total Ingredients");
+
+      // Generate and download the Excel file
+
+
+      // Format the current date for the filename
+      const now = new Date();
+      const formattedDate = now.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+
+      // Generate the Excel filename with the current date
+      const filename = `preparation_report_${formattedDate}.xlsx`;
+
+      XLSX.writeFile(wb, filename);
+      showNotification('Excel généré avec succès', 'success');
+    }
+
+
+    function calculateTotal() {
+      ingredientTotals = {}; // Reset totals
+
+      selectedPreparations.forEach((prep) => {
+        prep.ingredients.forEach((ingredient) => {
+          const totalAmount = ingredient.amount * prep.quantity;
+          if (!ingredientTotals[ingredient.name]) {
+            ingredientTotals[ingredient.name] = {
+              totalAmount: 0,
+              unit: ingredient.unit,
+              price: ingredient.pricePerKg || ingredient.pricePerL || ingredient.pricePerPiece || ingredient.pricePerG || ingredient.pricePerPortion || ingredient.pricePerBte || ingredient.pricePerBotte,
+              rendement: ingredient.rendement || 1,
+            };
+          }
+          ingredientTotals[ingredient.name].totalAmount += totalAmount;
+        });
+      });
+
+      console.log("Calculated Ingredient Totals:", ingredientTotals);
+      displayTotalIngredients(ingredientTotals); // Display totals
+
+    }

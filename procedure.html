@@ -3,11 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Procédure de Réception et Transfert de Produits</title>
+
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
     />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Custom JS -->
+    <script defer src="script.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Preparation Ingredients Calculator</title>
+  </head>
+  <body>
+
+
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img class="rounded-circle" src="logo.png" width="70px" alt="Logo">
+        </a>
+        <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white active" aria-current="page" href="#">Calcul des Ingrédients</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Document Qualité
+              </a>
+              <ul class="dropdown-menu bg-dark">
+                <li><a class="dropdown-item text-white" href="procedure.html">Procedure Reception</a></li>
+                <li><a class="dropdown-item text-white" href="#">Logigramme</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -30,15 +80,15 @@
       .signatures {
         margin-top: 20px;
       }
-      .signatures div {
-        display: inline-block;
-        width: 30%;
+      th, td{
         text-align: center;
+
+
       }
     </style>
   </head>
   <body>
-    <div class="container">
+    <div class="container mt-5">
       <h1 class="text-center text-bg-light">
         PROCEDURE HACCP RECEPTION & TRANSFERT
       </h1>
@@ -58,25 +108,37 @@
         <li class="list-group-item">Technicienne de Contrôle Qualité</li>
       </ul>
 
-      <div class="signatures mt-5 row">
-        <div class="col-sm-4 text-center">
-          <p><strong>Rédaction</strong></p>
-          <p>Nom : _____________</p>
-          <p>Fonction : _____________</p>
-          <p>Visas : _____________</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <p><strong>Vérification</strong></p>
-          <p>Nom : _____________</p>
-          <p>Fonction : _____________</p>
-          <p>Visas : _____________</p>
-        </div>
-        <div class="col-sm-4 text-center">
-          <p><strong>Approbation</strong></p>
-          <p>Nom : _____________</p>
-          <p>Fonction : _____________</p>
-          <p>Visas : _____________</p>
-        </div>
+      <div class="signatures mt-5">
+        <div class="col-md-10 col-sm-12 text-center">
+          <table class="table-bordered text-center mx-md-5">
+            <thead>
+              <tr class="align-content-center">
+                <th class="text-center"></th>
+                <th class="text-center">Redaction</th>
+                <th>Vérification</th>
+                <th>Approbation</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Nom</td>
+                <td>.............</td>
+                <td>.............</td>
+                <td>.............</td>
+              </tr>
+              <tr><TD>Fonction</TD>
+              <TD>.............</TD>
+              <TD>.............</TD>
+              <td>.............</td></tr>
+              <tr>
+                <td>Visa</td>
+                <td>.............</td>
+                <td>.............</td>
+                <td>.............</td>
+              </tr>
+            </tbody>
+          </table>
+
       </div>
 
       <h3 class="mt-5">I. Objectif</h3>
