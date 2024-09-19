@@ -1,5 +1,6 @@
 
 // Define built-in preparations with ingredients
+
 const builtInPreparations = [
     {
     name: "Supreme de Poulet alla Parmiggiana",
@@ -143,6 +144,7 @@ const builtInPreparations = [
     function removePreparation(index) {
       selectedPreparations.splice(index, 1);
       displayChosenPreparations();
+      calculateTotal();
     }
 
     // Update the quantity of a preparation
@@ -164,7 +166,7 @@ const builtInPreparations = [
             ingredientTotals[ingredient.name] = {
               totalAmount: 0,
               unit: ingredient.unit,
-              price: ingredient.pricePerKg || ingredient.pricePerL || ingredient.pricePerPiece || ingredient.pricePerG || ingredient.pricePerPortion || ingredient.pricePerBte,
+              price: ingredient.pricePerKg || ingredient.pricePerL || ingredient.pricePerPiece || ingredient.pricePerG || ingredient.pricePerPortion || ingredient.pricePerBte || ingredient.pricePerBote,
             };
           }
           ingredientTotals[ingredient.name].totalAmount += totalAmount;
@@ -174,19 +176,35 @@ const builtInPreparations = [
       displayTotalIngredients(ingredientTotals);
     }
 
-    // Display the total amount of each ingredient
-    function displayTotalIngredients(ingredientTotals) {
-      const totalIngredients = document.getElementById("total-ingredients");
-      totalIngredients.innerHTML = "";
+// Function to display the total ingredients in the predefined table
+function displayTotalIngredients(ingredientTotals) {
+  const totalIngredients = document.getElementById("total-ingredients");
+  totalIngredients.innerHTML = ""; // Clear any existing rows
 
-      for (const [name, data] of Object.entries(ingredientTotals)) {
-        const li = document.createElement("li");
-        const totalPrice = data.price * data.totalAmount; // Calculate total price
-        li.textContent = `${name}: ${data.totalAmount.toFixed(2)} ${data.unit} (Price: ${totalPrice.toFixed(2)})`;
-        totalIngredients.appendChild(li);
-      }
+  // Convert the ingredientTotals object to an array and sort it by total price (descending order)
+  const sortedIngredients = Object.entries(ingredientTotals).sort((a, b) => {
+    const totalPriceA = a[1].price * a[1].totalAmount;
+    const totalPriceB = b[1].price * b[1].totalAmount;
+    return totalPriceB - totalPriceA; // Sort descending by price
+  });
 
-    }
+  // Loop through the sorted ingredients and create rows for each
+  sortedIngredients.forEach(([name, data]) => {
+    const totalPrice = data.price * data.totalAmount; // Calculate total price
+
+    // Create a new table row
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${name}</td>
+      <td>${data.totalAmount.toFixed(2)} ${data.unit}</td>
+      <td>${totalPrice.toFixed(2)}</td>
+    `;
+
+    // Append the row to the tbody
+    totalIngredients.appendChild(row);
+  });
+}
+
 
     // Load built-in preparations when the page loads
     loadBuiltInPreparations();

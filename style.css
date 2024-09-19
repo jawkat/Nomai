@@ -26,13 +26,75 @@ body {
 } */
 
 
-.text_number{
-    width: 80px !important;
-    font-size: 1.2rem;
 
-}
-.list-text{
-    width: 200px;
-    font-size: 1rem !important;
 
-}
+/* Navbar container style */
+.navbar {
+    background-color: #343a40 !important; /* Dark background */
+    border-bottom: 2px solid #f8f9fa !important; /* Light border */
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  /* Hover effect for the navbar */
+  .navbar:hover {
+    background-color: #212529 !important; /* Darker on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+
+  /* Style for nav links */
+  .nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  /* Hover effect for nav links */
+  .nav-link:hover {
+    color: #f8f9fa !important; /* Slightly lighter white */
+    background-color: #495057 !important; /* Darker background on hover */
+    border-radius: 5px; /* Soft corner radius */
+  }
+
+  /* Dropdown styling */
+  .dropdown-menu {
+    background-color: #212529 !important;
+    border: none;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  /* Dropdown item hover effect */
+  .dropdown-item {
+    color: #f8f9fa !important;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+  /* Hover effect for dropdown items */
+  .dropdown-item:hover {
+    background-color: #343a40 !important; /* Darker background */
+    color: #ffffff !important;
+    border-radius: 4px; /* Smooth rounded corners on hover */
+  }
+
+  /* Navbar toggler style */
+  .navbar-toggler {
+    border: none;
+    outline: none;
+  }
+
+  /* Custom style for the navbar-toggler icon */
+  .navbar-toggler-icon {
+    filter: invert(1); /* Makes the icon white */
+  }
+
+  /* Additional padding and spacing */
+  .navbar-brand img {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navbar-brand:hover img {
+    transform: scale(1.1); /* Slight zoom effect */
+  }
+

@@ -30,32 +30,34 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-md ">
-      <div class="container bg-body-tertiary">
-        <a class="navbar-brand" href="#"><img class="rounded-circle" src="logo.png" width="70px" alt=""></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+
+    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img class="rounded-circle" src="logo.png" width="70px" alt="Logo">
+        </a>
+        <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Calcul des Ingrédients</a>
+              <a class="nav-link text-white active" aria-current="page" href="#">Calcul des Ingrédients</a>
             </li>
-
-
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Document Qualité
               </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Procedure Reception</a></li>
-                <li><a class="dropdown-item" href="#">Logigramme</a></li>
+              <ul class="dropdown-menu bg-dark">
+                <li><a class="dropdown-item text-white" href="#">Procedure Reception</a></li>
+                <li><a class="dropdown-item text-white" href="#">Logigramme</a></li>
               </ul>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+
 
 
     <div class="container my-5">
@@ -96,40 +98,62 @@
             <button
               class="btn btn-info text-white"
               type="button"
-              onclick="addSelectedPreparation()"
+              onclick="addSelectedPreparation() + calculateTotal()"
             >
               Add Preparation
             </button>
           </form>
         </div>
       </div>
+      <div class="d-md-flex justify-content-center gap-5">
 
+
+        <div class="mb-4 flex-grow-1">
+          <h3>Les préparations Choisis</h3>
+
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Préparation</th>
+                <th>Quantité</th>
+              </tr>
+            </thead>
+            <tbody id="chosen-prep-list">
+              <!-- Table rows will be dynamically added here -->
+            </tbody>
+          </table>
+        </div>
+
+
+        <div class=" flex-grow-1">
+          <h3>Totale des Ingrédients:</h3>
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Ingredient</th>
+
+                <th>Quantité Total</th>
+                <th>Prix total</th>
+              </tr>
+            </thead>
+            <tbody id="total-ingredients"> <!-- Rows will be dynamically added here -->
+            </tbody>
+          </table>
+        </div>
+
+
+
+
+
+      </div>
       <!-- Display selected preparations with their quantities -->
-      <div class="mb-4">
-        <h3>Les préparations Choisis</h3>
 
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Préparation</th>
-              <th>Quantité</th>
-            </tr>
-          </thead>
-          <tbody id="chosen-prep-list">
-            <!-- Table rows will be dynamically added here -->
-          </tbody>
-        </table>
-      </div>
 
-      <!-- Form to calculate total ingredients -->
-      <div>
-        <h3>Calculate Total Ingredients</h3>
-        <button class="btn btn-primary mb-3" onclick="calculateTotal()">
-          Calculate Total Ingredients
-        </button>
-        <h3>Total Ingredients Needed:</h3>
-        <ul id="total-ingredients" class="list-group"></ul>
-      </div>
-    </div>
+
+  <!-- Form to calculate total ingredients -->
+
+
+
+
   </body>
 </html>
