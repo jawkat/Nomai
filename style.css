@@ -67,7 +67,7 @@ body {
 
   /* Dropdown item hover effect */
   .dropdown-item {
-    color: #f8f9fa !important;
+    color: #68696b !important;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   }
 
@@ -76,6 +76,7 @@ body {
     background-color: #343a40 !important; /* Darker background */
     color: #ffffff !important;
     border-radius: 4px; /* Smooth rounded corners on hover */
+    font-weight: 700;
   }
 
   /* Navbar toggler style */
@@ -97,4 +98,3 @@ body {
   .navbar-brand:hover img {
     transform: scale(1.1); /* Slight zoom effect */
   }
-
