@@ -99,3 +99,6 @@ body {
     transform: scale(1.1); /* Slight zoom effect */
   }
 
+  #protected-content {
+    display: none;
+  }

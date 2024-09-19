@@ -34,6 +34,15 @@
   <body>
 
 
+    <div class="container-fluid m-5 p-2" id="password-prompt">
+      <label for="password">Enter Password:</label>
+      <input type="password" id="password">
+      <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <div id="protected-content">
+
+      <!-- Your protected content goes here -->
     <nav class="navbar navbar-expand-lg bg-dark border-bottom border-light shadow-sm">
       <div class="container">
         <a class="navbar-brand" href="#">
@@ -45,7 +54,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link text-white active" aria-current="page" href="#">Calcul des Ingrédients</a>
+              <a class="nav-link text-white active" aria-current="page" href="index.html">Calcul des Ingrédients</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,7 +62,7 @@
               </a>
               <ul class="dropdown-menu bg-dark">
                 <li><a class="dropdown-item text-white" href="procedure.html">Procedure Reception</a></li>
-                <li><a class="dropdown-item text-white" href="#">Logigramme</a></li>
+                <li><a class="dropdown-item text-white" href="logigramme.html">Logigramme</a></li>
               </ul>
             </li>
           </ul>
@@ -163,16 +172,6 @@
       </div>
       <!-- Display selected preparations with their quantities -->
 
-
-
-  <!-- Form to calculate total ingredients -->
-
-
-
-
-
-
-
-
+    </div>
   </body>
 </html>

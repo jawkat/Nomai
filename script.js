@@ -1,6 +1,19 @@
 
 // Define built-in preparations with ingredients
 
+const correctPassword = '00'; // Set your password here
+
+function checkPassword() {
+  const enteredPassword = document.getElementById('password').value;
+  if (enteredPassword === correctPassword) {
+    document.getElementById('password-prompt').style.display = 'none';
+    document.getElementById('protected-content').style.display = 'block';
+  } else {
+    alert('Incorrect password. Please try again.');
+  }
+}
+
+
 let ingredientTotals = {}; // Declare globally
   fetch('file.json')
   .then(response => response.json())
