@@ -15,6 +15,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
 
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+
     <!-- Custom JS -->
     <script defer src="script.js"></script>
 
@@ -26,19 +28,89 @@
       crossorigin="anonymous"
     ></script>
 
-    <script dfer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 
     <title>Preparation Ingredients Calculator</title>
+
+    <style>
+      body {
+        margin: 0;
+        height: 100%;
+        background: url('winner.jpg') no-repeat center center fixed;
+        background-size: contain
+      }
+
+      .login-container {
+        position: absolute;
+        top: 55%; /* Positionne le formulaire à 20% du haut de la page */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        max-width: 400px;
+        max-height: 350px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .notification {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+
+      .footer {
+        background-color: #f8f9fa; /* Light gray background */
+        padding: 20px 0;
+        border-top: 1px solid #dee2e6;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      .footer-text {
+        color: #6c757d; /* Gray color for the text */
+      }
+      .footer-text a {
+        color: #007bff; /* Bootstrap primary color for links */
+        text-decoration: none;
+      }
+      .footer-text a:hover {
+        text-decoration: underline;
+      }
+    </style>
+
   </head>
-  <body>
 
 
-    <div class="container-fluid m-5 p-2" id="password-prompt">
-      <label for="password">Enter Password:</label>
-      <input type="password" id="password">
-      <button onclick="checkPassword()">Submit</button>
+
+  <body class="bg-light">
+
+
+
+<div class="container mt-0 ">
+  <div id="notification-container">
+    <!-- Notifications will be added here by JavaScript -->
+  </div>
+</div>
+<div class="login-container" id="password-prompt">
+  <div id="loginForm">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username" required placeholder="Enter your username">
     </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" required>
+    </div>
+    <div class="d-grid gap-2">
+      <button type="button" class="btn btn-primary btn-lg" onclick="checkPassword()">Login</button>
+    </div>
+  </div>
+</div>
+
+
 
     <div id="protected-content">
 
@@ -53,6 +125,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto">
+
             <li class="nav-item">
               <a class="nav-link text-white active" aria-current="page" href="index.html">Calcul des Ingrédients</a>
             </li>
@@ -71,7 +144,7 @@
     </nav>
 
 
-    <div id="notification-container" class="position-fixed top-0 end-0 p-3" style=" z-index: 11;">
+    <div id="notification-container">
       <!-- Notifications will be added here by JavaScript -->
     </div>
 
@@ -89,7 +162,7 @@
         <div class="card-body">
           <h3 class="card-title">Choix des Plats</h3>
           <hr />
-          <form class="d-flex justify-content-between">
+          <div class="d-flex justify-content-between">
             <div class="mb-3 flex-grow-1 px-3">
               <label for="prep-select" class="form-label"
                 >Selectionner les recettes</label
@@ -122,14 +195,14 @@
               Add Preparation
             </button>
             <button class="btn btn-primary" onclick="generateExcelReport()">Download Excel</button>
-
+            <button class="btn btn-secondary"  id="generatePDFButton" onclick="generatePDFReport()">Download pdf</button>
 
             </div>
 
-          </form>
+          </div>
         </div>
       </div>
-      <div class="d-md-flex justify-content-center min-vw-75 gap-2">
+      <div class="d-md-flex justify-content-center  gap-2">
 
         <div class="mb-4 flex-grow-1">
           <h3>Les préparations Choisis</h3>
@@ -173,5 +246,13 @@
       <!-- Display selected preparations with their quantities -->
 
     </div>
+</div>
+    <footer class="footer text-center">
+      <div class="container">
+        <p class="footer-text mb-0">
+          &copy; 2024 by <a href="#" target="_blank">Nomai </a><span>Cuisine du Monde</span>
+        </p>
+      </div>
+    </footer>
   </body>
 </html>

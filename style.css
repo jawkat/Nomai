@@ -101,4 +101,49 @@ body {
 
   #protected-content {
     display: none;
+
   }
+
+  #password-prompt{
+    display: block;
+  }
+
+  #notification-container{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 80%;
+    margin-left: 10%;
+
+
+  }
+
+  .toast-body{
+    font-size: 1rem;
+    color: #212529;
+
+
+  }
+
+  /* class="position-fixed top-0 end-0 p-3" style=" z-index: 11; */
+td, input{
+  text-align: center;
+}
+
+.footer {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 20px 0;
+  border-top: 1px solid #dee2e6;
+}
+.footer-text {
+  color: #6c757d; /* Gray color for the text */
+}
+.footer-text a {
+  color: #007bff; /* Bootstrap primary color for links */
+  text-decoration: none;
+}
+.footer-text a:hover {
+  text-decoration: underline;
+}

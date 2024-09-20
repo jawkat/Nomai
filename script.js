@@ -2,14 +2,39 @@
 // Define built-in preparations with ingredients
 
 const correctPassword = '00'; // Set your password here
+const correctUser = 'nomai'
+
+function showNotification(message, type) {
+  // Create a new notification element
+  const notificationHTML = `
+  <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+    <strong>${message}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+`;
+
+   // Append the notification element to the notification container
+   const notificationContainer = document.getElementById("notification-container");
+   notificationContainer.innerHTML += notificationHTML;
+
+   // Initialize and show the toast
+   const toastElement = notificationContainer.lastElementChild;
+   const toast = new bootstrap.Toast(toastElement);
+   toast.show();
+ }
+
 
 function checkPassword() {
   const enteredPassword = document.getElementById('password').value;
-  if (enteredPassword === correctPassword) {
+  const enteruser = document.getElementById('username').value;
+  if (enteredPassword === correctPassword && enteruser === correctUser)
+      {
+    showNotification("Vous êtes autorisé à accéder au formulaire de calcul.", "success") ;
     document.getElementById('password-prompt').style.display = 'none';
     document.getElementById('protected-content').style.display = 'block';
+    document.body.style.background = 'none'; // Supprime l'image de fond
   } else {
-    alert('Incorrect password. Please try again.');
+    showNotification("Nom d'utilisateur ou mot de passe incorrect. Merci de réessayer.", "danger") ;
   }
 }
 
@@ -43,27 +68,6 @@ let ingredientTotals = {}; // Declare globally
       return selectedPreparations.some(prep => prep.name === preparationName);
     }
 
-function showNotification(message, type) {
-  // Create a new notification element
-  const notificationHTML = `
-        <div class="toast align-items-center text-white bg-${type} border-0 mb-2" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="d-flex ">
-            <div class="toast-body flash-message text-black">
-              ${message}
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-          </div>
-        </div>
-      `;
-   // Append the notification element to the notification container
-   const notificationContainer = document.getElementById("notification-container");
-   notificationContainer.innerHTML += notificationHTML;
-
-   // Initialize and show the toast
-   const toastElement = notificationContainer.lastElementChild;
-   const toast = new bootstrap.Toast(toastElement);
-   toast.show();
- }
 
 
     // Add selected preparation and its quantity to the list
@@ -75,7 +79,7 @@ function showNotification(message, type) {
       if (selectedPrep && prepQuantity > 0) {
 
         if (isPreparationInList(selectedPrep.name)) {
-          showNotification('This preparation is already in the list!', 'warning');
+          showNotification("Cette préparation est déjà dans la liste !", 'warning');
         } else {
           // Add preparation to the list
           selectedPreparations.push({
@@ -86,7 +90,7 @@ function showNotification(message, type) {
         displayChosenPreparations();
         }
       } else {
-        showNotification('Please select a preparation and enter a valid quantity.', 'danger');
+        showNotification("Veuillez sélectionner une préparation et entrer une quantité valide.", 'danger');
       }
     }
 
@@ -151,9 +155,9 @@ function displayTotalIngredients(ingredientTotals) {
     row.innerHTML = `
       <td>${name}</td>
       <td>${(data.rendement * 100).toFixed(0)}%</td>
-      <td>${data.totalAmount.toFixed(4)} ${data.unit}</td>
+      <td>${data.totalAmount.toFixed(2)} ${data.unit}</td>
       <td>${brute} ${data.unit}</td> <!-- New column for brute -->
-      <td>${totalPrice.toFixed(2)}</td> <!-- New column for brute -->
+      <td>${totalPrice.toFixed(2)} Dh</td> <!-- New column for brute -->
     `;
 
     // Append the row to the tbody
@@ -165,7 +169,10 @@ function displayTotalIngredients(ingredientTotals) {
     loadBuiltInPreparations();
 
 
-    function generateExcelReport() {
+    function generateExcelReport(event) {
+      if (event) {
+        event.preventDefault();
+      }
       // First, calculate the total ingredients to ensure data is up to date
       calculateTotal(); // This will populate ingredientTotals
 
@@ -195,7 +202,7 @@ function displayTotalIngredients(ingredientTotals) {
 
       // Prepare data for the second sheet (Total Ingredients)
       const ingredientsSheet = [
-        ["Ingrédient", "Unité", "Rendement", "Qté Net", "Qté Brute"]
+        ["Ingrédient", "Unité", "Rendement", "Qté Net", "Qté Brute", "Prix Total"]
       ];
 
       // Convert the ingredientTotals object to an array and sort it by total price (descending order)
@@ -220,7 +227,8 @@ function displayTotalIngredients(ingredientTotals) {
           data.unit,                       // Unit (e.g., kg, L)
           (data.rendement * 100).toFixed(0) + "%", // Rendement as percentage
           formattedTotalAmount,            // Total Amount with comma decimal
-          formattedBrute                   // Brute value with comma decimal
+          formattedBrute,
+          totalPrice                   // Brute value with comma decimal
         ]);
       });
 
@@ -239,8 +247,112 @@ function displayTotalIngredients(ingredientTotals) {
       const filename = `preparation_report_${formattedDate}.xlsx`;
 
       XLSX.writeFile(wb, filename);
-      showNotification('Excel généré avec succès', 'success');
+      showNotification("Le fichier de reporting Excel a été généré avec succès.", 'success');
     }
+
+
+    async function generatePDFReport() {
+      // Load pdf-lib
+      const { PDFDocument, rgb } = PDFLib;
+
+      // Create a new PDF document
+      const doc = await PDFDocument.create();
+
+      // Add a page to the document
+      const page = doc.addPage([600, 800]);
+
+      // Set up the font size and color
+      const fontSize = 12;
+      const textColor = rgb(0, 0, 0); // Black color
+
+      // Draw a title
+      page.drawText('Report of Selected Preparations', {
+        x: 50,
+        y: 750,
+        size: 18,
+        color: textColor,
+      });
+
+      // Draw Selected Preparations
+      page.drawText('Selected Preparations', {
+        x: 50,
+        y: 720,
+        size: 14,
+        color: textColor,
+      });
+
+      // Draw column headers
+      page.drawText('Préparation', { x: 50, y: 690, size: fontSize, color: textColor });
+      page.drawText('Quantité', { x: 300, y: 690, size: fontSize, color: rgb(0, 0, 0) });
+
+      // Draw the data
+      let y = 670;
+      selectedPreparations.forEach(prep => {
+        page.drawText(prep.name, { x: 50, y, size: fontSize, color: textColor });
+        page.drawText(prep.quantity.toString(), { x: 300, y, size: fontSize, color: textColor });
+        y -= 20;
+      });
+
+      // Add a new page for Total Ingredients
+      const page2 = doc.addPage([600, 800]);
+
+      // Draw title on the second page
+      page2.drawText('Total Ingredients', {
+        x: 50,
+        y: 750,
+        size: 18,
+        color: textColor,
+      });
+
+      // Draw column headers on the second page
+      page2.drawText('Ingrédient', { x: 50, y: 720, size: fontSize, color: textColor });
+      page2.drawText('Unité', { x: 200, y: 720, size: fontSize, color: textColor });
+      page2.drawText('Rendement', { x: 200, y: 720, size: fontSize, color: textColor });
+      page2.drawText('Qté Net', { x: 300, y: 720, size: fontSize, color: textColor });
+      page2.drawText('Qté Brute', { x: 400, y: 720, size: fontSize, color: textColor });
+      page2.drawText('Prix Total', { x: 500, y: 720, size: fontSize, color: textColor });
+
+      // Draw the ingredients data
+      y = 690;
+      Object.entries(ingredientTotals).forEach(([name, data]) => {
+        const totalPrice = data.price * data.totalAmount; // Calculate total price
+        const brute = data.rendement ? (data.totalAmount / data.rendement).toFixed(2) : 'N/A'; // Calculate brute
+
+        // Replace the decimal point (.) with a comma (,) manually
+        const formattedTotalAmount = data.totalAmount.toFixed(2).replace('.', ',');
+        const formattedBrute = brute !== 'N/A' ? brute.replace('.', ',') : 'N/A';
+
+        page2.drawText(name, { x: 50, y, size: fontSize, color: textColor });
+        page2.drawText(data.unit, { x: 150, y, size: fontSize, color: textColor });
+        page2.drawText((data.rendement * 100).toFixed(0) + "%", { x: 200, y, size: fontSize, color: textColor });
+        page2.drawText(formattedTotalAmount, { x: 300, y, size: fontSize, color: textColor });
+        page2.drawText(formattedBrute, { x: 400, y, size: fontSize, color: textColor });
+        page2.drawText(totalPrice.toFixed(2).replace('.', ','), { x: 500, y, size: fontSize, color: textColor });
+        y -= 20;
+      });
+
+      // Serialize the document to bytes
+      const pdfBytes = await doc.save();
+
+      // Download the PDF
+      const now = new Date();
+      const formattedDate = now.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+      const filename = `preparation_report_${formattedDate}.pdf`;
+
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(new Blob([pdfBytes], { type: 'application/pdf' }));
+      link.download = filename;
+      link.click();
+
+      showNotification("Le fichier de reporting PDF a été généré avec succès.", 'success');
+    }
+
+    // Example button click event to trigger the function
+    document.getElementById('generatePDFButton').addEventListener('click', generatePDFReport);
+
+
+
+
 
 
     function calculateTotal() {
@@ -260,8 +372,6 @@ function displayTotalIngredients(ingredientTotals) {
           ingredientTotals[ingredient.name].totalAmount += totalAmount;
         });
       });
-
-      console.log("Calculated Ingredient Totals:", ingredientTotals);
       displayTotalIngredients(ingredientTotals); // Display totals
 
     }
