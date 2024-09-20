@@ -167,7 +167,7 @@
               <label for="prep-select" class="form-label"
                 >Selectionner les recettes</label
               >
-              <select class="form-select" id="prep-select">
+              <select class="form-select" onchange="addSelectedPreparation() + calculateTotal()" id="prep-select">
                 <!-- Built-in preparations will be dynamically added here -->
               </select>
             </div>

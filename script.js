@@ -70,29 +70,62 @@ let ingredientTotals = {}; // Declare globally
 
 
 
-    // Add selected preparation and its quantity to the list
+    // // Add selected preparation and its quantity to the list
+    // function addSelectedPreparation() {
+    //   const selectedIndex = document.getElementById("prep-select").value;
+    //   const selectedPrep = builtInPreparations[selectedIndex];
+    //   const prepQuantity = Number(document.getElementById("prep-quantity").value);
+
+    //   if (selectedPrep && prepQuantity > 0) {
+
+    //     if (isPreparationInList(selectedPrep.name)) {
+    //       showNotification("Cette préparation est déjà dans la liste !", 'warning');
+    //     } else {
+    //       // Add preparation to the list
+    //       selectedPreparations.push({
+    //         ...selectedPrep,
+    //         quantity: prepQuantity
+    //       });
+
+    //     displayChosenPreparations();
+    //     }
+    //   } else {
+    //     showNotification("Veuillez sélectionner une préparation et entrer une quantité valide.", 'danger');
+    //   }
+    // }
+
     function addSelectedPreparation() {
       const selectedIndex = document.getElementById("prep-select").value;
       const selectedPrep = builtInPreparations[selectedIndex];
-      const prepQuantity = Number(document.getElementById("prep-quantity").value);
 
-      if (selectedPrep && prepQuantity > 0) {
+      if (selectedPrep) {
+        // Prompt user for the preparation quantity
+        const prepQuantityInput = prompt("Veuillez entrer la quantité de la préparation sélectionnée :");
 
-        if (isPreparationInList(selectedPrep.name)) {
-          showNotification("Cette préparation est déjà dans la liste !", 'warning');
+        // Convert the input into a number
+        const prepQuantity = Number(prepQuantityInput);
+
+        if (prepQuantity > 0) {
+          if (isPreparationInList(selectedPrep.name)) {
+            showNotification("Cette préparation est déjà dans la liste !", 'warning');
+          } else {
+            // Add preparation to the list
+            selectedPreparations.push({
+              ...selectedPrep,
+              quantity: prepQuantity
+            });
+
+            displayChosenPreparations();
+          }
         } else {
-          // Add preparation to the list
-          selectedPreparations.push({
-            ...selectedPrep,
-            quantity: prepQuantity
-          });
-
-        displayChosenPreparations();
+          showNotification("Veuillez entrer une quantité valide.", 'danger');
         }
       } else {
-        showNotification("Veuillez sélectionner une préparation et entrer une quantité valide.", 'danger');
+        showNotification("Veuillez sélectionner une préparation.", 'danger');
       }
     }
+
+
 
     // Display chosen preparations with their quantities
     function displayChosenPreparations() {
