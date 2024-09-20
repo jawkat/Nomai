@@ -2,7 +2,7 @@
 // Define built-in preparations with ingredients
 
 const correctPassword = '00'; // Set your password here
-const correctUser = 'nomai'
+const correctUser = ['nomai', 'Nomai']
 
 function showNotification(message, type) {
   // Create a new notification element
@@ -27,7 +27,7 @@ function showNotification(message, type) {
 function checkPassword() {
   const enteredPassword = document.getElementById('password').value;
   const enteruser = document.getElementById('username').value;
-  if (enteredPassword === correctPassword && enteruser === correctUser)
+  if (enteredPassword === correctPassword &&  correctUser.includes(enteruser))
       {
     showNotification("Vous êtes autorisé à accéder au formulaire de calcul.", "success") ;
     document.getElementById('password-prompt').style.display = 'none';
