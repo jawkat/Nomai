@@ -100,12 +100,16 @@ body {
   }
 
   #protected-content {
-    display: none;
+    display: block;
 
   }
 
   #password-prompt{
-    display: block;
+    display: none;
+  }
+/* a supprmier  */
+  body{
+    background-image: none !important;
   }
 
   #notification-container{

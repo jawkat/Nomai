@@ -69,31 +69,6 @@ let ingredientTotals = {}; // Declare globally
     }
 
 
-
-    // // Add selected preparation and its quantity to the list
-    // function addSelectedPreparation() {
-    //   const selectedIndex = document.getElementById("prep-select").value;
-    //   const selectedPrep = builtInPreparations[selectedIndex];
-    //   const prepQuantity = Number(document.getElementById("prep-quantity").value);
-
-    //   if (selectedPrep && prepQuantity > 0) {
-
-    //     if (isPreparationInList(selectedPrep.name)) {
-    //       showNotification("Cette préparation est déjà dans la liste !", 'warning');
-    //     } else {
-    //       // Add preparation to the list
-    //       selectedPreparations.push({
-    //         ...selectedPrep,
-    //         quantity: prepQuantity
-    //       });
-
-    //     displayChosenPreparations();
-    //     }
-    //   } else {
-    //     showNotification("Veuillez sélectionner une préparation et entrer une quantité valide.", 'danger');
-    //   }
-    // }
-
     function addSelectedPreparation() {
       const selectedIndex = document.getElementById("prep-select").value;
       const selectedPrep = builtInPreparations[selectedIndex];
@@ -398,7 +373,7 @@ function displayTotalIngredients(ingredientTotals) {
             ingredientTotals[ingredient.name] = {
               totalAmount: 0,
               unit: ingredient.unit,
-              price: ingredient.pricePerKg || ingredient.pricePerL || ingredient.pricePerPiece || ingredient.pricePerG || ingredient.pricePerPortion || ingredient.pricePerBte || ingredient.pricePerBotte,
+              price: ingredient.pricePerKg || ingredient.pricePerL || ingredient.pricePerPiece || ingredient.pricePerG || ingredient.pricePerPortion || ingredient.pricePerBte || ingredient.pricePerBotte || ingredient.pricePerCl,
               rendement: ingredient.rendement || 1,
             };
           }
