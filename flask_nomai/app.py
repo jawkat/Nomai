@@ -15,6 +15,7 @@ db = SQLAlchemy(app)
 class Ingrédient(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nom = db.Column(db.String(100), nullable=False)
+    stock = db.Column(db.Float, nullable=False)
     prix_unitaire = db.Column(db.Float, nullable=False)
     produits_sauce = db.relationship('ProduitSauce', backref='ingredient', lazy=True)
     produits_plat = db.relationship('ProduitPlat', backref='ingredient', lazy=True)
@@ -46,8 +47,8 @@ class Préparation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nom = db.Column(db.String(100), nullable=False)
     nombre_portions = db.Column(db.Integer, nullable=False)
-    coût_total = db.Column(db.Float, nullable=False, default=0.0)
-    coût_par_portion = db.Column(db.Float, nullable=False, default=0.0)
+    cout_total = db.Column(db.Float, nullable=False, default=0.0)
+    cout_par_portion = db.Column(db.Float, nullable=False, default=0.0)
 
     sauce_id = db.Column(db.Integer, db.ForeignKey('sauce.id'), nullable=True)
     produits_plat = db.relationship('ProduitPlat', backref='plat', lazy=True)
@@ -78,17 +79,17 @@ class ProduitSauce(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     sauce_id = db.Column(db.Integer, db.ForeignKey('sauce.id'), nullable=False)
     ingredient_id = db.Column(db.Integer, db.ForeignKey('ingrédient.id'), nullable=False)
-    quantité = db.Column(db.Float, nullable=False)
-    unité = db.Column(db.String(50), nullable=False)
-    coût = db.Column(db.Float, nullable=False)
+    quantite = db.Column(db.Float, nullable=False)
+    unite = db.Column(db.String(50), nullable=False)
+    cout = db.Column(db.Float, nullable=False)
 
 class ProduitPlat(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     plat_id = db.Column(db.Integer, db.ForeignKey('préparation.id'), nullable=False)
     ingredient_id = db.Column(db.Integer, db.ForeignKey('ingrédient.id'), nullable=False)
-    quantité = db.Column(db.Float, nullable=False)
-    unité = db.Column(db.String(50), nullable=False)
-    coût = db.Column(db.Float, nullable=False)
+    quantite = db.Column(db.Float, nullable=False)
+    unite = db.Column(db.String(50), nullable=False)
+    cout = db.Column(db.Float, nullable=False)
 
 # Routes
 @app.route('/')
