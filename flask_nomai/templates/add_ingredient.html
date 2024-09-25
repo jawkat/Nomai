@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter Ingrédient</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Ajouter un Ingrédient</h2>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div>{{ form.name.label }} {{ form.name() }}</div>
+            <div>{{ form.prix_unitaire.label }} {{ form.prix_unitaire() }}</div>
+            <div>{{ form.stock.label }} {{ form.stock() }}</div>
+            <div>{{ form.submit() }}</div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingrédients</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Liste des Ingrédients</h2>
+        <a href="{{ url_for('add_ingredient') }}" class="btn btn-success">Ajouter Ingrédient</a>
+        <ul>
+            {% for ingredient in ingredients %}
+                <li>{{ ingredient.name }} - {{ ingredient.prix_unitaire }} € - Stock: {{ ingredient.stock }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

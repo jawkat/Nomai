@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de la Cuisine</title>
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue dans l'application de gestion de cuisine</h1>
+        <a href="{{ url_for('ingredients') }}" class="btn btn-primary">Ingrédients</a>
+        <a href="{{ url_for('sauces') }}" class="btn btn-primary">Sauces</a>
+        <a href="{{ url_for('plats') }}" class="btn btn-primary">Plats</a>
+    </div>
+</body>
+</html>
