@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Sauces</title>
+</head>
+<body>
+    <h1>Liste des Sauces</h1>
+    <ul>
+        {% for sauce in sauces %}
+            <li>
+                {{ sauce.nom }} - {{ sauce.nombre_portions }} portions
+                <ul>
+                    {% for produit in sauce.ingredients %}
+                        <li>{{ produit.ingredient.nom }} : {{ produit.quantité }} unités - Prix: {{ produit.coût }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
