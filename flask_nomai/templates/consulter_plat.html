@@ -1,0 +1,26 @@
+<!-- consulter_plat.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ plat.nom }}</title>
+</head>
+<body>
+    <h1>{{ plat.nom }}</h1>
+    <p>Nombre de portions: {{ plat.nombre_portions }}</p>
+    <p>Coût total: {{ plat.coût_total }} MAD</p>
+    <p>Coût par portion: {{ plat.coût_par_portion }} MAD</p>
+
+    <h2>Ingrédients</h2>
+    <ul>
+        {% for produit in ingredients %}
+            <li>
+                {{ produit.ingredient.nom }} - {{ produit.quantité }} {{ produit.unité }} ({{ produit.coût }} MAD)
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('home') }}">Retour à la liste des plats</a>
+</body>
+</html>

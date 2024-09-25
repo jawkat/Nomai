@@ -1,6 +1,6 @@
-from flask import Flask, render_template, redirect, url_for, request, jsonify, flash
+from flask import Flask, render_template, redirect, url_for, request, jsonify, flash,abort
 from flask_sqlalchemy import SQLAlchemy
-from forms import IngredientForm, SauceForm, PreparationForm, ProduitSauceForm, ProduitPlatForm  # Import des formulaires
+from forms import IngredientForm, SauceForm, PreparationForm, ProduitSauceForm  # Import des formulaires
 
 # Configuration de l'application
 app = Flask(__name__)
@@ -210,6 +210,16 @@ def ajouter_produit_sauce(sauce_id):
     return render_template('ajouter_produit_sauce.html', form=form, sauce=sauce)
 
 
+@app.route('/plat/<int:plat_id>')
+def consulter_plat(plat_id):
+    plat = Préparation.query.get(plat_id)
+    if not plat:
+        abort(404)  # Plat non trouvé
+
+    # Récupérer les ingrédients associés
+    ingredients = [produit for produit in plat.produits_plat]
+
+    return render_template('consulter_plat.html', plat=plat, ingredients=ingredients)
 
 
 
