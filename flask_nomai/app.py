@@ -22,12 +22,6 @@ class Ingredient(db.Model):
     stock = db.Column(db.Float, nullable=False)
     unite = db.Column(db.String(10), nullable=False)
 
-class Sauce(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    ingredients = db.relationship('SauceIngredient', backref='sauce', lazy=True)
-    portions = db.Column(db.Integer, nullable=False)
-
 class SauceIngredient(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     sauce_id = db.Column(db.Integer, db.ForeignKey('sauce.id'), nullable=False)
@@ -36,6 +30,14 @@ class SauceIngredient(db.Model):
 
     # Relation to access the ingredient details
     ingredient = db.relationship('Ingredient')
+
+class Sauce(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
+    ingredients = db.relationship('SauceIngredient', backref='sauce', lazy=True)
+    portions = db.Column(db.Integer, nullable=False)
+
+
 
 class Plat(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -86,6 +88,7 @@ def initialize_data():
     db.session.add(sauce_pesto)
     db.session.commit()
 
+    print(sauce_pesto.id)
     # Add ingredients for sauce pesto
     sauce_ingredients = [
         SauceIngredient(sauce_id=sauce_pesto.id, ingredient_id=6, quantity=2.0),  # Basilic
@@ -160,8 +163,8 @@ def add_ingredient():
 # Sauce Routes
 @app.route('/sauces')
 def sauces():
-    sauces = Sauce.query.all()
-    return render_template('sauces.html', sauces=sauces)
+    sauces = Sauce.query.all()  # Récupère toutes les sauces
+    return render_template('sauces.html', sauces=sauces)  # Rendu du template avec les sauces
 
 @app.route('/sauces/add', methods=['GET', 'POST'])
 def add_sauce():

@@ -10,10 +10,10 @@
     <ul>
         {% for sauce in sauces %}
             <li>
-                {{ sauce.nom }} - {{ sauce.nombre_portions }} portions
+                {{ sauce.name }} - {{ sauce.portions }} portions  <!-- Assurez-vous que les attributs correspondent -->
                 <ul>
-                    {% for produit in sauce.ingredients %}
-                        <li>{{ produit.ingredient.nom }} : {{ produit.quantité }} unités - Prix: {{ produit.coût }}</li>
+                    {% for sauce_ingredient in sauce.ingredients %}
+                        <li>{{ sauce_ingredient.ingredient.name }} : {{ sauce_ingredient.quantity }} unités - Prix: {{ sauce_ingredient.ingredient.prix_unitaire }}</li>
                     {% endfor %}
                 </ul>
             </li>
